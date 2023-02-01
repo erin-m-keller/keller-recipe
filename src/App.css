@@ -1,38 +1,318 @@
-.App {
+/************************************************
+*
+*   Main Stylesheet
+*   @version (1.0)
+*   @date (2023)
+*
+*   1.) GENERAL ______________________ @general
+*   2.) HEADER _______________________ @header
+*   3.) RECIPE CARD __________________ @recipe
+*   4.) FOOTER _______________________ @footer
+*
+************************************************/
+
+/************************************************
+   GENERAL                              @general
+
+   The base styles for the page, text
+   and links. Includes utility class
+   and animation styles
+************************************************/
+:root {
+  --bg-color-one: #212738;
+  --bg-color-two: #f97068;
+  --bg-color-three: #d1d646;
+  --bg-color-four: #edf2ef;
+  --bg-color-five: #57c4e5;
+  --bg-color-six: #7d84b2;
+  --font-title-style: "Fauna One", sans-serif;
+  --font-main-style: "Krub", sans-serif;
+  --font-sub-style: "Edu VIC WA NT Beginner", sans-serif;
+}
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  background-color: var(--bg-color-four);
+}
+hr {
+  border-top: 1px solid #d0d8d3;
+}
+h1,
+h2 {
+  font-family: var(--font-title-style);
+}
+p {
+  font-family: var(--font-main-style);
+}
+.capitalize {
+  text-transform: capitalize;
+}
+@keyframes App-logo-spin {
+  from {
+      transform: rotate(0deg);
+  }
+  to {
+      transform: rotate(360deg);
+  }
+}
+
+/************************************************
+   HEADER                                @header
+
+   The styles for the header which
+   includes a title, an image and a 
+   horizontal menu (desktop and mobile)
+************************************************/
+.banner {
+  padding: 1rem;
+  color: #FFF;
+  background-color: var(--bg-color-one);
+  width: 100%;
+  height: 12rem;
+  text-align: center;
+}
+.banner h1 {
+  padding-bottom: 1rem;
+  font-size: 28px;
+}
+.banner .custom-search {
+  width: 75%;
+  position: relative;
+  margin: 0 auto;
+}
+.banner .custom-search input[type=text] {
+  width: 100%;
+  padding: 1rem;
+  font-size: 18px;
+  font-family: var(--font-main-style);
+  border: 3px solid var(--bg-color-three);
+}
+.banner .custom-search .btn-search {
+  position: absolute;
+  right: 67px;
+  cursor: pointer;
+  top: 3px;
+  bottom: 3px;
+  border: 0;
+  background: var(--bg-color-one);
+  color: #FFF;
+  font-family: var(--font-main-style);
+  font-weight: 600;
+  outline: none;
+  margin: 0;
+  padding: 0 10px;
+  z-index: 2;
+  font-size: 18px;
+}
+.banner .custom-search .btn-clear {
+  position: absolute;
+  right: 3px;
+  top: 3px;
+  bottom: 3px;
+  border: 0;
+  background: var(--bg-color-two);
+  color: #000;
+  font-family: var(--font-main-style);
+  font-weight: 600;
+  cursor: pointer;
+  outline: none;
+  margin: 0;
+  padding: 0 10px;
+  z-index: 2;
+  font-size: 18px;
+}
+.no-data {
+  height: 72vh;
+  padding: 3rem;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+/************************************************
+   RECIPE CARD                           @recipe
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+   The styles for the recipe card
+************************************************/
+.recipe-container {
+  width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  flex: 0 0 30%;
+  justify-content: space-between;
+  margin: 4rem auto;
+}
+.recipe-card {
+  background-color: #fff;
+  border: 1px dashed #919c95;
+  -moz-box-shadow: 0 4px 12px #b6c0ba; 
+  -webkit-box-shadow: 0 4px 12px #b6c0ba;
+  box-shadow: 0 4px 12px #b6c0ba;
+  width: 100%;
+  margin-bottom: 2rem;
+}
+@media (min-width: 600px) {
+  .recipe-card {
+    width: 48%;
   }
 }
+@media (min-width: 1000px) {
+  .recipe-card {
+    width: 30%;
+  }
+}
+.recipe-card .recipe-banner {
+  background-color: var(--bg-color-two);
+  display: table;
+  width: 100%;
+}
+.recipe-card .recipe-banner p {
+  color: #000;
+  font-family: var(--font-title-style);
+  font-weight: 600;
+}
+.recipe-card .recipe-banner div.dish-type  p {
+  position: absolute;
+  top: 0.7rem;
+  right: 1rem;
+  font-size: 1rem;
+  color: #FFF;
+  font-family: var(--font-title-style);
+  font-weight: 600;
+}
+.recipe-card .recipe-banner div {
+  width: 50%;
+  padding: 1rem;
+  min-height: 4rem;
+  display: table-cell;
+  border-bottom: 3px solid var(--bg-color-three);
+}
+.recipe-card .recipe-banner div.dish-type {
+  width: 50%;
+  min-height: 4rem;
+  color: #FFF;
+  padding: 1rem;
+  position: relative;
+  font-size: 1rem;
+}
+.recipe-card .recipe-banner div.dish-type::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--bg-color-one);
+  clip-path: polygon(18% 0, 100% 0%, 100% 100%, 0% 100%);
+}
+.recipe-sub-banner {
+  display: table;
+  width: 100%;
+}
+.recipe-sub-banner p {
+  font-size: 14px;
+}
+.recipe-card .recipe-sub-banner div {
+  width: 50%;
+  padding: 1rem;
+  min-height: 4rem;
+  display: table-cell;
+  vertical-align: top;
+}
+.recipe-card .recipe-sub-banner img {
+  border: 1px solid #d0d8d3;
+  -moz-box-shadow: 0 4px 12px #b6c0ba; 
+  -webkit-box-shadow: 0 4px 12px #b6c0ba;
+  box-shadow: 0 4px 12px #b6c0ba;
+  width: 100%;
+  height: auto;
+}
+.recipe-card .diet,
+.recipe-card .health,
+.recipe-card .cautions {
+  background-color: var(--bg-color-four);
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+.recipe-card .diet div.title,
+.recipe-card .health div.title,
+.recipe-card .cautions div.title {
+  width: 7em;
+  padding: 1rem;
+  display: table-cell;
+}
+.recipe-card .tag {
+  font-family: var(--font-main-style);
+  padding: 0.2rem 0.5rem 0.3rem;
+  border-radius: 5px;
+  margin: 0.5rem 0.1rem;
+}
+.recipe-card .tag-sm {
+  font-size: .75rem;
+  display: inline-block;
+  letter-spacing: .15px;
+  font-weight: 600;
+  width: auto;
+}
+.recipe-card .tag.diet {
+  background-color: var(--bg-color-five);
+}
+.recipe-card .tag.health {
+  background-color: var(--bg-color-six);
+  color: #FFF;
+}
+.recipe-card .tag.caution {
+  background-color: red;
+  color: #FFF;
+}
+.recipe-card .ingredient-list {
+  text-align: center;
+}
+.recipe-card .ingredient-list h2 {
+  padding-bottom: 1rem;
+}
+.recipe-card .ingredient-list ul {
+  margin-left: 1rem;
+  list-style-type: none;
+}
+.recipe-card .ingredient-list div {
+  text-align: center;
+  padding: 1rem;
+}
+.recipe-card .ingredient-list button {
+  transition-duration: 0.4s;
+  background-color: white;
+  color: black;
+  border: 2px solid var(--bg-color-two); 
+  padding: 12px 28px;
+  margin: 1rem auto;
+  font-size: 16px;
+  cursor: pointer;
+}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.recipe-card .ingredient-list button:hover {
+  background-color: var(--bg-color-two);
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
+/************************************************
+   FOOTER                                 @footer
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+   The styles for the footer
+************************************************/
+.footer {
+  padding: 1rem;
+  text-align: center;
+  color: #FFF;
+  font-family: var(--font-main-style);
+  background-color: var(--bg-color-one);
+  border-top: 3px solid var(--bg-color-three);
+  font-size: 18px;
+  font-weight: 600;
 }
