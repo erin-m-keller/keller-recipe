@@ -83,6 +83,7 @@ class App extends React.Component {
                 :
                 <section className="recipe-container">
                 {
+                    /* loop through and display each recipe in the json object */
                     hits.map((hit,idx) => ( 
                       <article className="recipe-card" key={idx}>
                         <div className="recipe-banner">
