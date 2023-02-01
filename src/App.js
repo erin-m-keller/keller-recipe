@@ -2,6 +2,7 @@ import React from "react";
 import './App.css';
 
 class App extends React.Component {
+    /* initialize state and functions */
     constructor(props) {
       super(props);
       this.state = {
@@ -14,6 +15,7 @@ class App extends React.Component {
       this.handleChange = this.handleChange.bind(this);
       this.submitSearch = this.submitSearch.bind(this);
     }
+    /* only print the grocery list for the selected recipe - based on element ID */
     printGroceryList (listId) {   
       console.log(listId);  
       var mywindow = window.open('', 'PRINT', 'height=400,width=600');
@@ -27,13 +29,14 @@ class App extends React.Component {
       mywindow.close();
       return true;
     }
-
+    /* clear the search bar */
     clearSearch(e) {
       e.preventDefault(); 
       this.setState({
         inputValue: ''
       });
     }
+    /* update state as the user types */
     handleChange(e) {
       const val = e.target.value;   
       this.setState({
@@ -41,9 +44,10 @@ class App extends React.Component {
       });
       console.log(this.state.inputValue);
     }
+    /* call edamam API and get data for the searched input */
     submitSearch(e) {
       e.preventDefault();
-      let searchTerm = this.state.inputValue.replace(/ /g, '+');
+      let searchTerm = this.state.inputValue.replace(/ /g, '+'); /* replace spaces with + */
       let params = new URLSearchParams({ 
         type: "public",
         app_id: process.env.REACT_APP_RECIPE_ID, 
@@ -58,7 +62,6 @@ class App extends React.Component {
         });
       })
     }
-   
     render() {
         const { DataisLoaded, hits, inputValue } = this.state;
         return (
@@ -74,6 +77,7 @@ class App extends React.Component {
             <main>
               {!DataisLoaded ? 
                 <section className="no-data">
+                  {/* displayed when there is no data in the recipe state element */}
                   <h1>Please search for a recipe to access a printable grocery list.</h1> 
                 </section>
                 :
@@ -105,6 +109,7 @@ class App extends React.Component {
                             <p><strong>Diet</strong>:</p>
                           </div>
                           <div>
+                            {/* loop through diet tags and display */}
                             <div className="tag-container">
                               {
                                 hit.recipe.dietLabels.map((diet,idx2) => (
@@ -119,6 +124,7 @@ class App extends React.Component {
                             <p><strong>Health</strong>:</p>
                           </div>
                           <div>
+                            {/* loop through health tags and display */}
                             <div className="tag-container">
                               {
                                 hit.recipe.healthLabels.map((health,idx3) => (
@@ -129,9 +135,11 @@ class App extends React.Component {
                           </div>
                         </div>
                         <div className="ingredient-list">
+                          {/* button opens print window with grocery list displayed */}
                           <button className="noprint" onClick={() => this.printGroceryList("printable-list_" + idx)}>Print Grocery List</button>
                           <div id={"printable-list_" + idx}>
                             <h2>Ingredient List</h2>
+                            {/* loop through grocery list and display */}
                             <ul>
                               {
                                 hit.recipe.ingredientLines.map((ingredient,idx4) => (
