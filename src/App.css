@@ -156,12 +156,12 @@ p {
   width: 100%;
   margin-bottom: 2rem;
 }
-@media (min-width: 600px) {
+@media screen and (min-width: 600px) {
   .recipe-card {
     width: 48%;
   }
 }
-@media (min-width: 1000px) {
+@media screen and (min-width: 1000px) {
   .recipe-card {
     width: 30%;
   }

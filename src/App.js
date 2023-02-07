@@ -161,7 +161,7 @@ class App extends React.Component {
             </footer>
         </div>
     );
-}
+    }
 }
    
 export default App;
