@@ -2,8 +2,7 @@
 
 ## Description
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). This application allows
-users to search for recipes and then print a grocery list. Created using [Edamam API](https://www.edamam.com/).
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). This application allows users to search for recipes and then print a grocery list. Created using [Edamam API](https://www.edamam.com/).
 
 ## Screenshot
 
@@ -11,8 +10,8 @@ users to search for recipes and then print a grocery list. Created using [Edamam
 
 ## Deployed page
 
-Page published at: [https://erin-m-keller.github.io/recipe-app/](https://erin-m-keller.github.io/recipe-app/)
+[View Published Page](https://erin-m-keller.github.io/recipe-app/)
 
 ## License
 
-Please refer to the LICENSE in the repo.
+[MIT](https://choosealicense.com/licenses/mit/)
