@@ -1,7 +1,7 @@
 {
-  "name": "recipe-app",
+  "name": "keller-recipe",
   "version": "0.1.0",
-  "homepage": "https://erin-m-keller.github.io/recipe-app",
+  "homepage": "https://erin-m-keller.github.io/keller-recipe",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",

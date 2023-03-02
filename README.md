@@ -17,7 +17,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Deployed page
 
-[View Published Page](https://erin-m-keller.github.io/recipe-app/)
+[View Published Page](https://erin-m-keller.github.io/keller-recipe/)
 
 ## License
 
